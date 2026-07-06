@@ -41,5 +41,8 @@ const bugMap: Record<string, Bug<string>> = {
 };
 
 const selectElement = document.querySelector<HTMLSelectElement>('#species')!;
-
-selectElement.addEventListener('change', (e): e.target is HTMLSelectElement => {})
+selectElement.addEventListener("change", e => {
+  if (isSelect(e.target)) {
+    bugMap[e.target.value].render();
+  }
+});
