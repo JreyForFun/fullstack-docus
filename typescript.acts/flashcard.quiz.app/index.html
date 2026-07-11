@@ -10,25 +10,25 @@
     <div class="flashcard-panel">
       <h1 class="title">Flash Card Quiz App</h1>
       <div class="flashcard-container">
-        <div class="flashcard" id="flashcard">
-        </div>
+        <div class="flashcard" id="flashcard"></div>
       </div>
     </div>
     <div class="control-panel">
       <h3>Manage Cards</h3>
-      <button class="delete-btn" id="delete-btn">Delete</button>
-      <hr>
+      <button class="delete-btn" id="delete-btn" type="button">Delete</button>
+      <hr />
       <h3>All Cards</h3>
-      <button class="change-flashcard-btn" id="change-flashcard-btn">What is the question...</button>
-      <hr>
+      <div class="select-container" id="select-container"></div>
+      <hr />
       <form class="entry-form" id="entry-form">
         <p>Add a New Card</p>
-        <label class="label" for="front-input">Front:</label>
-        <textarea class="front-input" id="front-input"></textarea>
-        <label class="label" for="back-input">Back:</label>
-        <textarea class="back-input" id="back-input"></textarea>
+        <label class="label" for="front-text">Front:</label>
+        <textarea class="front-input" id="front-text" required></textarea>
+        <label class="label" for="back-text">Back:</label>
+        <textarea class="back-input" id="back-text" required></textarea>
       </form>
-      <button class="save-button" id="save-button">Save new flash card</button>
+      <div id="error-span"></div>
+      <button class="save-button" id="save-button" type="button">Save new flash card</button>
     </div>
     <script src="index.ts"></script>
   </body>
