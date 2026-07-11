@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Flashcard App</title>
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>
+            📇 Flash cards
+            <span id="card-count-badge">0</span>
+        </h1>
+
+        <!-- Flashcard -->
+        <div class="flashcard-wrapper">
+            <div id="flashcard">
+                <div class="card-face card-front">
+                    <span class="label">❓ Question</span>
+                    <div class="content" id="front-content">No cards yet</div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="label">💡 Answer</span>
+                    <div class="content" id="back-content">Add a card to start</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-counter" id="card-counter">
+            Card <span id="current-index-display">0</span> / <span id="total-cards-display">0</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="delete-btn" disabled>
+                <span class="icon">🗑</span> Delete
+            </button>
+        </div>
+
+        <!-- Error toast -->
+        <div class="error-toast" id="error-toast">
+            <span>⚠️</span>
+            <span id="error-message">Error</span>
+            <button class="close-error" id="error-close-btn">&times;</button>
+        </div>
+
+        <!-- Add form -->
+        <form id="entry-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="front-text">Question (front)</label>
+                    <textarea id="front-text" placeholder="e.g. What is 2 + 2?" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="back-text">Answer (back)</label>
+                    <textarea id="back-text" placeholder="e.g. 4" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="reset">Clear</button>
+                <button type="submit">➕ Add card</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- ─── TypeScript via CDN ─── -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.3.3/typescript.min.js">
+    </script>
+    <script>
+        // Compile and run TypeScript from the next <script type="text/typescript">
+        (function() {
+            const scripts = document.querySelectorAll('script[type="text/typescript"]');
+            for (const script of scripts) {
+                const code = script.textContent;
+                try {
+                    const result = ts.transpileModule(code, {
+                        compilerOptions: {
+                            target: ts.ScriptTarget.ES2020,
+                            module: ts.ModuleKind.ESNext,
+                            strict: true
+                        }
+                    });
+                    // Use Function constructor to avoid eval with block-scope issues
+                    const fn = new Function(result.outputText);
+                    fn();
+                } catch (err) {
+                    console.error('TypeScript compilation error:', err);
+                }
+            }
+        })();
+    </script>
+
+    <script src='index.ts'></script>
+
+</body>
+</html>
