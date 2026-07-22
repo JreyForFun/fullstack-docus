@@ -1,0 +1,39 @@
+// buffers - raw binary data
+// binary data means = when u have ur data stored in bytes
+
+// reading files
+// receiving
+// working wit hstreams
+// handling image files videos pdf
+// encrypt and hasing 
+
+const textBuffer = Buffer.from('Node'); // N - 4e, o - 6f, d -64, e 
+console.log(textBuffer)
+
+console.log(textBuffer.toString()) 
+// output: Node
+
+const endBuffer = Buffer.from("Hello");
+console.log(endBuffer.length) // output: 5
+
+const fixedBuffer = Buffer.alloc(5);
+console.log("fixed buffer", fixedBuffer)
+
+fixedBuffer.write("API")
+
+console.log("after write", fixedBuffer)
+console.log("fixed buffer to string", fixedBuffer.toString())
+
+// chunks
+
+const chunks = [
+    Buffer.from("Hello"),
+    Buffer.from("Node"),
+    Buffer.from("JS")
+]
+
+
+const combineBuffer = Buffer.concat (chunks);
+
+console.log(combineBuffer, combineBuffer.toString('utf-8'))
+

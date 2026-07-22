@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+      /* Language and Environment */
+      "target": "ES2020",              // Output modern JS
+      "module": "CommonJS",            // Node.js default module system
+      "lib": ["ES2020"],               // Include standard ES features
+      "moduleResolution": "node",      // Resolve modules like Node.js
+  
+      /* Paths and Structure */
+      "rootDir": "src",                // Source files live here
+      "outDir": "dist",                // Compiled JS goes here
+      "baseUrl": "./",                 // Base for non-relative imports
+      "paths": {                       // Example alias
+        "@/*": ["src/*"]
+      },
+  
+      /* Type Checking */
+      "strict": true,                  // Enable all strict type checks
+      "noImplicitAny": true,           // Disallow variables without types
+      "strictNullChecks": true,        // Handle null/undefined explicitly
+      "skipLibCheck": true,            // Skip type checks for node_modules
+  
+      /* Interop and Extras */
+      "esModuleInterop": true,         // Allow default imports from CommonJS
+      "resolveJsonModule": true,       // Import JSON files directly
+      "allowJs": true,                 // (Optional) compile .js files too
+      "checkJs": false,                // Don’t type-check JS files unless needed
+      "sourceMap": true,               // Generate source maps for debugging
+      "forceConsistentCasingInFileNames": true // Enforce consistent file names
+    },
+    "include": ["src"],                // Compile everything in src/
+    "exclude": ["node_modules", "dist"] // Ignore these folders
+  }
+  
