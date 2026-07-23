@@ -1,1 +1,6 @@
 # fullstack-docus
+
+## REACT + TYPESCRIPT
+## NODE.JS + EXPRESS.JS
+## POSTGRESQL
+## DOCKER
